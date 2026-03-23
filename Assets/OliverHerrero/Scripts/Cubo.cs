@@ -1,14 +1,18 @@
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class Cubo : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
     [SerializeField] private GameObject cube;
-    private Vector3 spawnPoint;
-    private float Rotation;
+    public Vector3 spawnPoint;
     private float time = 3.0f;
+    private float destinationOffsetRange = 1.5f;
+    private float offset;
+    [SerializeField] private Transform camara;
+    [SerializeField] float distance = 10f;
 
     void Start()
     {
@@ -18,9 +22,7 @@ public class Cubo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-       // spawnPoint = cube.transform.localPosition + player.transform.position;
-        //Rotation = player.transform.localRotation.eulerAngles.x;
+
     }
 
     IEnumerator spawnTime(float time)
@@ -28,7 +30,11 @@ public class Cubo : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(time);
-            Instantiate(cube, new Vector3(Random.Range(-10,10),3f, 14f), Quaternion.identity);
+            Vector3 direction = camara.forward;
+            direction.y = 0f;
+            Vector3 position = camara.position + direction * distance;
+            GameObject cubePrefab = Instantiate(cube, position, Quaternion.identity);
+            Destroy(cubePrefab,3.5f);
         }
     }
 }

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 2444028418829483114}
   - component: {fileID: 6616142799957998161}
   m_Layer: 0
-  m_Name: bALA
-  m_TagString: Untagged
+  m_Name: Bullet
+  m_TagString: Bala
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,4 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovimientoCubo
   player: {fileID: 0}
   cube: {fileID: 1983753737697898464}
+  spawnPoint: {x: 0, y: 0, z: 0}
   speed: 3
