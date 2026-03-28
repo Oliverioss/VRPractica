@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 867538477628725992}
   - component: {fileID: 7725513071481928644}
   - component: {fileID: 2444028418829483114}
-  - component: {fileID: 3950121356286052731}
+  - component: {fileID: 6616142799957998161}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Bomb
   m_TagString: Bala
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,6 +69,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5ebedd4c1f8bfd24b954a53c3b7e1739, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,7 +113,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3950121356286052731
+--- !u!114 &6616142799957998161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4196275769c104fa08b1d8a8e8bcf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovimientoCubo
-  player: {fileID: 34604641939187188, guid: ae94fba6bc28da344ab71d03ffb6586f, type: 3}
+  player: {fileID: 0}
   cube: {fileID: 1983753737697898464}
   spawnPoint: {x: 0, y: 0, z: 0}
   speed: 3
