@@ -25,5 +25,14 @@ public class Sable : MonoBehaviour
                 Marcador.Instance.scoreText.text = Marcador.Instance.score.ToString();
             }
         }
+        else if (other.gameObject.CompareTag("Bomb"))
+        {
+            if (Marcador.Instance.score < 20 && Marcador.Instance.score > 0)
+            {
+                Destroy(other.gameObject);
+                Marcador.Instance.score--;
+                Marcador.Instance.scoreText.text = Marcador.Instance.score.ToString();
+            }
+        }
     }
 }

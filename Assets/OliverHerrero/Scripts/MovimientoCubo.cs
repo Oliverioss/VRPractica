@@ -6,7 +6,7 @@ public class MovimientoCubo : MonoBehaviour
     [SerializeField] private GameObject cube;
     public Vector3 spawnPoint;
     [SerializeField] private float speed = 3.0f;
-    private float destinationOffsetRange = 1f;
+    private float destinationOffsetRange = 0.7f;
     private float offset;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

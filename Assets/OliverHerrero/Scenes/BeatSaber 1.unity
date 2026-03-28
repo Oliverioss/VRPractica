@@ -245,6 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 915943990}
+  - component: {fileID: 915943991}
   m_Layer: 0
   m_Name: GeneradorBombas
   m_TagString: Untagged
@@ -267,6 +268,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &915943991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915943989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae57bcb50e5e5a84eaaaa19dfdf5f241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GeneradorBombas
 --- !u!1 &921649368
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cubo
   cube: {fileID: 1983753737697898464, guid: 454021bf3f0c5c74da8baeb13ffed8f8, type: 3}
+  bomb: {fileID: 1983753737697898464, guid: 48e0d3aeedd338b4eaafb6dfabdfc9cc, type: 3}
   spawnPoint: {x: 0, y: 0, z: 0}
   camara: {fileID: 6232745470274686056}
   distance: 10
