@@ -3,23 +3,24 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class Cubo : MonoBehaviour
 {
     [SerializeField] private GameObject cube;
-    [SerializeField] private GameObject cubePrefab;
 
     [SerializeField] private GameObject bomb;
-    [SerializeField] private GameObject bombPrefab;
     public Vector3 spawnPoint;
     private float time = 3.0f;
-    private float destinationOffsetRange = 1.5f;
-    private float offset;
     [SerializeField] private Transform camara;
     [SerializeField] float distance = 10f;
     private float bombProbability = 0.3f;
+    private Scene currentScene;
+    private string sceneName;
     void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
         StartCoroutine(spawnTime(time));
     }
 
@@ -37,16 +38,25 @@ public class Cubo : MonoBehaviour
             Vector3 direction = camara.forward;
             direction.y = 0f;
             Vector3 position = camara.position + direction * distance;
-            if (Random.value > bombProbability)
+
+            if (sceneName == "Facil")
             {
                 GameObject cubePrefab = Instantiate(cube, position, Quaternion.identity);
+                Destroy(cubePrefab, 3.5f);
             }
-            else
+            if (sceneName =="Dificil")
             {
-                GameObject bombPrefab = Instantiate(bomb, position, Quaternion.identity);
+                if (Random.value > bombProbability)
+                {
+                    GameObject cubePrefab = Instantiate(cube, position, Quaternion.identity);
+                    Destroy(cubePrefab, 3.5f);
+                }
+                else
+                {
+                    GameObject bombPrefab = Instantiate(bomb, position, Quaternion.identity);
+                    Destroy(bombPrefab, 3.5f);
+                }
             }
-            Destroy(cubePrefab,3.5f);
-            Destroy(bombPrefab, 3.5f);
         }
     }
 }
