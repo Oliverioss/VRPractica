@@ -31,16 +31,23 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeEasyMode()
     {
+        AudioManager.Instance.PlayButton();
         SceneManager.LoadScene("Facil");
     }
     
     public void ChangeHardMode()
     {
+        AudioManager.Instance.PlayButton();
         SceneManager.LoadScene("Dificil");
     }
-
+    public void ChangeArrowMode()
+    {
+        AudioManager.Instance.PlayButton();
+        SceneManager.LoadScene("Flechas");
+    }
     public void ChangeOptions()
     {
+        AudioManager.Instance.PlayButton();
         int index = dropdown.value;
         switch (index)
         {
@@ -59,7 +66,7 @@ public class GameManager : MonoBehaviour
     }
     public void SableNumber(bool activated)
     {
-        Debug.Log(activated);
+        AudioManager.Instance.PlayButton();
         if (activated == true)
         {
             secondSable = true;

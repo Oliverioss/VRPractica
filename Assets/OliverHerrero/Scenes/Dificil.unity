@@ -463,10 +463,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cubo
   cube: {fileID: 1983753737697898464, guid: 454021bf3f0c5c74da8baeb13ffed8f8, type: 3}
+  leftCube: {fileID: 0}
+  rightCube: {fileID: 0}
+  downCube: {fileID: 0}
+  upCube: {fileID: 0}
   bomb: {fileID: 1983753737697898464, guid: 48e0d3aeedd338b4eaafb6dfabdfc9cc, type: 3}
   spawnPoint: {x: 0, y: 0, z: 0}
   camara: {fileID: 6232745470274686056}
   distance: 10
+  correctDirection: 0
 --- !u!4 &921649370
 Transform:
   m_ObjectHideFlags: 0
@@ -1052,7 +1057,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4daa826e709bc934aad2444e5365321d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1165,7 +1170,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: eec042406db129e458930f773ad360b2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

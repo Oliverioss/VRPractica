@@ -15,8 +15,6 @@ public class MovimientoCubo : MonoBehaviour
         spawnPoint = cube.transform.position;
         offset = Random.Range(-destinationOffsetRange, destinationOffsetRange);
     }
-
-    // Update is called once per frame
     void Update()
     {
         Vector3 direction = new Vector3(Camera.main.transform.position.x + offset,Camera.main.transform.position.y, Camera.main.transform.position.z);
