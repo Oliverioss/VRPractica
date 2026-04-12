@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/OliverHerrero/Scenes/Flechas.unity
     guid: f135052e91b26774396fa84bb422f1af
+  - enabled: 1
+    path: Assets/OliverHerrero/Scenes/Derrota.unity
+    guid: bee6e8de18b1fe6419b68b55b2b82e6c
+  - enabled: 1
+    path: Assets/OliverHerrero/Scenes/Victoria.unity
+    guid: d23735de8bdd9e5408f53e03016516fe
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 891b49279425a7f448cc54e7e91ae04d, type: 2}

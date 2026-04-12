@@ -278,6 +278,7 @@ MonoBehaviour:
   numberOfBlocks: 0
   secondSable: 0
   toggle: {fileID: 652806571}
+  player: {fileID: 1196646590}
 --- !u!1 &200169388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 783816780}
   - component: {fileID: 783816779}
+  - component: {fileID: 783816781}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1278,6 +1280,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &783816781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783816778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1 &955103932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,6 +1455,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ac0ac1df7ba9dde47ae5faaa6c6a231e, type: 3}
   buttonSound:
   - {fileID: 8300000, guid: 76572554e0dbe71438811d1969a72228, type: 3}
+  loseSound:
+  - {fileID: 8300000, guid: 93bdcac2fdc570f4aa3a5f42aca8e95f, type: 3}
+  victorySound:
+  - {fileID: 8300000, guid: 25e40b9198c10504b95ea1d9a8f85166, type: 3}
   musicSource: {fileID: 1718439720}
   sfxSource: {fileID: 1927144969}
   EasyTheme: {fileID: 8300000, guid: 0e9eead88fcaccd4b96f64cb34d9129d, type: 3}
@@ -2264,6 +2299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventMando
   menuActionReference: {fileID: 1077647210854630678, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  menuPanel: {fileID: 0}
+  isActivated: 0
 --- !u!1 &1210721934
 GameObject:
   m_ObjectHideFlags: 0

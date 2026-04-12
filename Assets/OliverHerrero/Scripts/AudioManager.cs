@@ -4,7 +4,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    public AudioClip[] pointSound, bombSound, buttonSound;
+    public AudioClip[] pointSound, bombSound, buttonSound, loseSound, victorySound;
     public AudioSource musicSource, sfxSource;
 
     public AudioClip EasyTheme, DifficultTheme, ArrowTheme, MenuTheme;
@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour
     }
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Menu")
+        if (scene.name == "Menu" || scene.name == "Victoria" || scene.name == "Derrota")
         {
             PlayMusic(MenuTheme);
         }
@@ -71,5 +71,13 @@ public class AudioManager : MonoBehaviour
     public void PlayButton()
     {
         sfxSource.PlayOneShot(buttonSound[0]);
+    }
+    public void PlayLoseSound()
+    {
+        sfxSource.PlayOneShot(loseSound[0]);
+    }
+    public void PlayVictorySound()
+    {
+        sfxSource.PlayOneShot(victorySound[0]);
     }
 }

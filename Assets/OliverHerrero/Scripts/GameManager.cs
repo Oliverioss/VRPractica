@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int numberOfBlocks;
     public bool secondSable;
     public Toggle toggle;
+    [SerializeField] private GameObject player;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -29,12 +30,26 @@ public class GameManager : MonoBehaviour
 
         toggle.onValueChanged.AddListener(SableNumber);
     }
+    public void ChangeMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void ChangeVictoryMenu()
+    {
+        SceneManager.LoadScene("Victoria");
+    }
+    public void ChangeLostMenu()
+    {
+        SceneManager.LoadScene("Derrota");
+    }
+
     public void ChangeEasyMode()
     {
         AudioManager.Instance.PlayButton();
         SceneManager.LoadScene("Facil");
     }
-    
+
     public void ChangeHardMode()
     {
         AudioManager.Instance.PlayButton();

@@ -1,11 +1,12 @@
-using TMPro;
 using UnityEngine;
+using TMPro;
 
-public class Marcador : MonoBehaviour
+public class MarcadorBomba : MonoBehaviour
 {
-    public static Marcador Instance;
-    public int score = 0;
-    public TextMeshProUGUI scoreText;
+    public static MarcadorBomba Instance;
+    public int bombCount = 0;
+    public TextMeshProUGUI bombText;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -18,6 +19,7 @@ public class Marcador : MonoBehaviour
     }
     void Start()
     {
-        scoreText.text = score.ToString();
+        bombText.text = bombCount.ToString();
     }
 }
+

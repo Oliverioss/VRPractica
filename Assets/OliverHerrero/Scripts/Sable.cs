@@ -8,6 +8,7 @@ public class Sable : MonoBehaviour
     private Vector3 lastPos;
     private Quaternion lastRot;
     private Vector3 angularVel;
+    private int bombCount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,6 +23,7 @@ public class Sable : MonoBehaviour
 
         lastPos = transform.position;
         lastRot = transform.rotation;
+        bombCount = 0;
     }
 
     // Update is called once per frame
@@ -72,15 +74,33 @@ public class Sable : MonoBehaviour
                 Marcador.Instance.score++;
                 Marcador.Instance.scoreText.text = Marcador.Instance.score.ToString();
             }
+            if (Marcador.Instance.score == GameManager.Instance.numberOfBlocks)
+            {
+                AudioManager.Instance.PlayVictorySound();
+                SceneManager.LoadScene("Victoria");
+            }
         }
         if (other.CompareTag("Bomb"))
         {
+            MarcadorBomba.Instance.bombCount++;
+            MarcadorBomba.Instance.bombText.text = MarcadorBomba.Instance.bombCount.ToString();
+
+            AudioManager.Instance.PlayBombSound();
             if (Marcador.Instance.score < GameManager.Instance.numberOfBlocks && Marcador.Instance.score > 0)
-            {
-                AudioManager.Instance.PlayBombSound();
+            { 
                 Destroy(other.gameObject);
                 Marcador.Instance.score--;
                 Marcador.Instance.scoreText.text = Marcador.Instance.score.ToString();
+            }
+            if(Marcador.Instance.score == GameManager.Instance.numberOfBlocks)
+            {
+                AudioManager.Instance.PlayVictorySound();
+                SceneManager.LoadScene("Victoria");
+            }
+            if (MarcadorBomba.Instance.bombCount == 3)
+            {
+                AudioManager.Instance.PlayLoseSound();
+                SceneManager.LoadScene("Derrota");
             }
         }
 
@@ -91,13 +111,18 @@ public class Sable : MonoBehaviour
             float fuerza = velocidad.magnitude + angularVel.magnitude * 0.01f;
             Cubo.Direction dir = GetDireccion();
             bool acierto = cuboDireccion.Destroy(dir, fuerza);
-            if (acierto)
+            if (acierto && Marcador.Instance.score < GameManager.Instance.numberOfBlocks)
             {
                 AudioManager.Instance.PlayPointSound();
                 Marcador.Instance.score++;
                 Marcador.Instance.scoreText.text = Marcador.Instance.score.ToString();
             }
-            else
+            if (Marcador.Instance.score == GameManager.Instance.numberOfBlocks)
+            {
+                AudioManager.Instance.PlayVictorySound();
+                SceneManager.LoadScene("Victoria");
+            }
+            else if (!acierto)
             {
                 AudioManager.Instance.PlayBombSound();
             }
